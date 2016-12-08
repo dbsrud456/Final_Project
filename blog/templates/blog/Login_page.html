@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <title></title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
+
+        body {
+            width: 100%;
+            background-size: 600% 100%;
+            padding-top: 90px;
+            background: #F7F7F7;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+        }
+        .panel {
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: 300;
+        }
+
+        .panel-login {
+            border: none;
+            margin-top: 170px;
+            -webkit-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
+            -moz-box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
+            box-shadow: 0px 0px 49px 14px rgba(188,190,194,0.39);
+        }
+
+        .panel-login .checkbox input[type=checkbox] {
+            margin-left: 0px;
+        }
+
+        .panel-login .checkbox label {
+            padding-left: 25px;
+            font-weight: 300;
+            display: inline-block;
+            position: relative;
+        }
+
+        .panel-login .checkbox {
+            padding-left: 20px;
+        }
+
+        .panel-login .checkbox label::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            left: 0;
+            margin-left: 0px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            background-color: #fff;
+            -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+            -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+            transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        }
+
+        .panel-login .checkbox label::after {
+            display: inline-block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 0;
+            margin-left: 0px;
+            padding-left: 3px;
+            padding-top: 1px;
+            font-size: 20px;
+            color: #555555;
+        }
+
+        .panel-login .checkbox input[type="checkbox"] {
+            opacity: 0;
+        }
+
+        .panel-login .checkbox input[type="checkbox"]:focus + label::before {
+            outline: thin dotted;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+
+        .panel-login .checkbox input[type="checkbox"]:checked + label::after {
+            font-family: 'FontAwesome';
+            content: "\f00c";
+        }
+
+        .panel-login > .panel-heading .tabs {
+            padding: 0;
+        }
+
+        .panel-login h2 {
+            font-size: 50px;
+            font-weight: 300 bold;
+            margin: 30px;
+        }
+
+        .panel-login > .panel-heading {
+            color: #848c9d;
+            background-color: #e8e9ec;
+            border-color: #fff;
+            text-align: center;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom: 0px;
+            padding: 0px 15px;
+        }
+
+        .panel-login .form-group {
+            padding: 0 30px;
+        }
+
+        .panel-login > .panel-heading .login {
+            padding: 15px 30px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .panel-login > .panel-heading .register {
+            padding: 15px 30px;
+            background: #2d3b55;
+            border-bottom-right-radius: 5px;
+        }
+
+        .panel-login > .panel-heading a {
+            text-decoration: none;
+            color: #666;
+            font-weight: bold;
+            font-size: 22px;
+            -webkit-transition: all 0.1s linear;
+            -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+        }
+
+        .panel-login > .panel-heading a#register-form-link {
+            color: #fff;
+            width: 100%;
+            text-align: right;
+        }
+
+        .panel-login > .panel-heading a#login-form-link {
+            width: 100%;
+            text-align: left;
+        }
+
+        .panel-login input[type="text"], .panel-login input[type="email"], .panel-login input[type="password"] {
+            height: 45px;
+            border: 0;
+            font-size: 20px;
+            font-weight: bold;
+            -webkit-transition: all 0.1s linear;
+            -moz-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-bottom: 1px solid #e7e7e7;
+            border-radius: 0px;
+            padding: 6px 0px;
+        }
+
+        .panel-login input:hover,
+        .panel-login input:focus {
+            outline: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            border-color: #ccc;
+        }
+
+        .btn-login {
+            background-color: #E8E9EC;
+            outline: none;
+            color: #2D3B55;
+            font-size: 20px;
+            height: auto;
+            font-weight: normal;
+            padding: 7px 0;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 0px;
+            box-shadow: none;
+        }
+
+        .btn-login:hover,
+        .btn-login:focus {
+            color: #fff;
+            background-color: #2D3B55;
+        }
+
+        .forgot-password {
+            text-decoration: underline;
+            color: #888;
+        }
+
+        .forgot-password:hover,
+        .forgot-password:focus {
+            text-decoration: underline;
+            color: #666;
+        }
+
+        .btn-register {
+            background-color: #E8E9EC;
+            outline: none;
+            color: #2D3B55;
+            font-size: 20px;
+            height: auto;
+            font-weight: normal;
+            padding: 8px 0;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 0px;
+            box-shadow: none;
+        }
+
+        .btn-register:hover,
+        .btn-register:focus {
+            color: #fff;
+            background-color: #2D3B55;
+        }
+
+    </style>
+
+    <script language="javascript">
+        $(function () {
+            $('#login-form-link').click(function (e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function (e) {
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+        });
+
+        function check1() {
+            var frm = document.enroll;
+            frm.checkid.value = 1;
+        }
+
+        function enter() {
+
+            var frm = document.enroll;
+
+            if (frm.username.value.length < 3) {
+                alert("아이디는 3자 이상 입력해주세요");
+                return;
+            }
+            if (frm.pwd.value.length < 4) {
+                alert("비밀번호는 4자이상 입력해주세요");
+                return;
+            }
+            if (frm.pwd1.value != frm.pwd.value) {
+                alert("비밀번호가 다릅니다");
+                return;
+            }
+            if (frm.email.value.length < 1 || frm.e_domain.value.length < 1) {
+                alert("이메일을 입력해주세요");
+                return;
+            }
+
+            frm.method = "get";
+            frm.action = "./Welcom.html"; //넘어간화면
+            frm.submit(); //등록이 될수 있는 조건이면, 정보를 보내겠다.
+        }
+
+        //이메일 부분
+        function checkid() {
+            var frm = document.enroll;
+            var regExp = /^([/\w/g\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
+            if (!regExp.test(frm.email.value)) {
+                alert('올바른 email을 입력해주세요.');
+                frm.email.focus();
+            }
+        }
+
+        function domainCheck() {
+            var frm = document.enroll;
+            if (frm.domain.value == 0) {
+                frm.e_domain.value = "";
+                frm.e_domain.disabled = false;
+            } else {
+                frm.e_domain.value = frm.domain.value;
+                frm.e_domain.disabled = true;
+            }
+        }
+
+        //취소버튼
+        function showConfirm() {
+            if (confirm("가입을 정말 취소하시겠습니까?")) {
+                location.href = "./MAIN_page.html"
+            }
+            else return;
+        }
+
+    </script>
+</head>
+<body>
+    <?
+    // 1. 공통 인클루드 파일
+    include ("./include.php");
+
+    // 2. 로그인한 회원은 뒤로 보내기
+    if($_SESSION[user_id]){
+    ?>
+    <script>
+        alert("로그인 하신 상태입니다.");
+        history.back();
+    </script>
+    <?
+    }
+    // 3. 입력 HTML 출력
+    ?>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                                    <h2 style="text-align:center">L O G I N</h2>
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="col-xs-6 form-group pull-left checkbox">
+                                        <input id="checkbox1" type="checkbox" name="remember">
+                                        <label for="checkbox1">ID 기억하기</label>
+                                    </div>
+                                    <div class="col-xs-6 form-group pull-right">
+                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                    </div>
+
+                                </form>
+                                <form id="register-form" action="#" method="post" role="form" style="display: none;">
+                                    <h2 style="text-align:center">R E G I S T E R</h2>
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" tabindex="4" class="form-control btn btn-register" onclick="javascript: login_chk();" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style=" text-align:center;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <a href="" tabindex="5" style="text-align:center" ">메인으로 돌아가기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6 tabs">
+                                <a href="#" class="active" id="login-form-link"><div class="login">LOGIN</div></a>
+                            </div>
+                            <div class="col-xs-6 tabs">
+                                <a href="#" id="register-form-link"><div class="register">REGISTER</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 5.입력필드 검사함수
+        function login_chk() {
+            // 6.form 을 f 에 지정
+            var f = document.loginForm;
+
+            // 7.입력폼 검사
+            if (f.m_id.value == "") {
+                // 8.값이 없으면 경고창으로 메세지 출력 후 함수 종료
+                alert("아이디를 입력해 주세요.");
+                return false;
+            }
+
+            if (f.m_pass.value == "") {
+                alert("비밀번호를 입력해 주세요.");
+                return false;
+            }
+
+            // 9.검사가 성공이면 form 을 submit 한다
+            f.submit();
+
+        }
+    </script>
+x
+</body>
+</html>

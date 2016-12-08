@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+
+    <title></title>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        section {
+            padding-top: 250px;
+            min-height: 750px;
+        }
+        .error {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .error-code {
+            bottom: 60%;
+            color: #2d353c;
+            font-size: 96px;
+            line-height: 100px;
+        }
+
+        .error-desc {
+            font-size: 12px;
+            color: #647788;
+        }
+
+        .m-b-10 {
+            margin-bottom: 10px !important;
+        }
+
+        .m-b-20 {
+            margin-bottom: 20px !important;
+        }
+
+        .m-t-20 {
+            margin-top: 20px !important;
+        }
+
+
+        footer {
+            height: 100px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 50px;
+            background-color: grey;
+            background-position: center;
+            float: left;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .container_1 {
+            margin-top: 50px;
+            color: #fff;
+        }
+    </style>
+
+    <script language="javascript">
+
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./Main_page.html" style="color:#2a309f; font-weight:bold; font-size:20px; ">Memories</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./Login_page.html" target="_top">Login</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 국 내 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="#">서울, 인천</a></li>
+                                <li><a href="#">경기도</a></li>
+                                <li><a href="#">강원도</a></li>
+                                <li><a href="#">경상도</a></li>
+                                <li><a href="#">전라도</a></li>
+                                <li><a href="#">충청도</a></li>
+                                <li><a href="#">제주도</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 해 외 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="#">일본</a></li>
+                                <li><a href="#">중국</a></li>
+                                <li><a href="#">대만</a></li>
+                                <li><a href="#">홍콩</a></li>
+                                <li><a href="#">미국</a></li>
+                                <li><a href="#">프랑스</a></li>
+                                <li><a href="#">호주</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./TravelEditor_page.html"><b>여행후기작성하기</b></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="error">
+            <div class="error-code m-b-10 m-t-20">404 <i class="fa fa-warning"></i></div>
+            <h3 class="font-bold">페이지를 찾지 못했습니다...</h3>
+            <div class="error-desc">
+                페이지를 찾지못하였거나 존재하지않습니다.<br />
+                홈으로 돌아가셔서 다시 시도해 보시기 바랍니다.
+                <div>
+                    <a class=" login-detail-panel-button btn" href="./Main_page.html">
+                        <i class="fa fa-arrow-left"></i>
+                        메인으로 돌아가기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container_1" style="margin: 25px;">
+            <div class="row">
+                <p>Copyright (C) 2016 Web Travel 컴퓨터공학과 5179064 예윤경 </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

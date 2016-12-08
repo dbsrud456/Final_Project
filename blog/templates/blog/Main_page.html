@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <title></title>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        #login-dp {
+            min-width: 250px;
+            padding: 14px 14px 0;
+            overflow: hidden;
+            background-color: rgba(255,255,255,.8);
+        }
+
+        #login-dp .help-block {
+            font-size: 12px;
+        }
+
+        #login-dp .bottom {
+            background-color: rgba(255,255,255,.8);
+            border-top: 1px solid #ddd;
+            clear: both;
+            padding: 14px;
+        }
+
+        #login-dp .social-buttons {
+            margin: 12px 0;
+        }
+
+        #login-dp .social-buttons a {
+            width: 49%;
+        }
+
+        #login-dp .form-group {
+            margin-bottom: 10px;
+        }
+        @media(max-width:768px) {
+            #login-dp {
+                background-color: inherit;
+                color: #fff;
+            }
+
+            #login-dp .bottom {
+                background-color: inherit;
+                border-top: 0 none;
+            }
+        }
+
+        #myCarousel .nav a small {
+            display: block;
+        }
+
+        #myCarousel .nav {
+            background: #eee;
+        }
+
+        .nav-justified > li > a {
+            border-radius: 0px;
+        }
+
+        .nav-pills > li[data-slide-to="0"].active a {
+            background-color: #16a085;
+        }
+
+        .nav-pills > li[data-slide-to="1"].active a {
+            background-color: #e67e22;
+        }
+
+        .nav-pills > li[data-slide-to="2"].active a {
+            background-color: #2980b9;
+        }
+
+        .nav-pills > li[data-slide-to="3"].active a {
+            background-color: #8e44ad;
+        }
+
+        section {
+            padding-top: 50px;
+            min-height: 750px;
+        }
+
+        footer {
+            height: 100px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 50px;
+            background-color: grey;
+            background-position: center;
+            float: left;
+            bottom: 0;
+            text-align: center;
+        }
+        .container_1 {
+            margin-top: 50px;
+            color: #fff;
+        }
+    </style>
+
+    <script language="javascript">
+
+        $('#myCarousel').carousel({
+            interval: 100000
+        });
+
+        $(document).ready(function () {
+
+            var clickEvent = false;
+            $('#myCarousel').on('click', '.nav a', function () {
+                clickEvent = true;
+                $('.nav li').removeClass('active');
+                $(this).parent().addClass('active');
+            }).on('slid.bs.carousel', function (e) {
+                if (!clickEvent) {
+                    var count = $('.nav').children().length - 1;
+                    var current = $('.nav li.active');
+                    current.removeClass('active').next().addClass('active');
+                    var id = parseInt(current.data('slide-to'));
+                    if (count == id) {
+                        $('.nav li').first().addClass('active');
+                    }
+                }
+                clickEvent = false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./Main_page.html" style="color:#2a309f; font-weight:bold; font-size:20px; ">Memories</a>
+                </div>
+                <?
+                // 1. 공통 인클루드 파일
+                include ("./include.php");
+
+                // 2. 로그인한 회원은 뒤로 보내기
+                if($_SESSION[user_id]){
+                ?>
+                <script>
+                    alert("로그인 하신 상태입니다.");
+                    history.back();
+                </script>
+                <?
+                }
+                // 3. 입력 HTML 출력
+                ?>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                            <ul id="login-dp" class="dropdown-menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form name="loginForm" class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="exampleInputEmail2">ID</label>
+                                                    <input type="text" class="form-control" id="m_id" placeholder="ID" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                    <input type="password" class="form-control" id="m_pass" placeholder="Password" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <br />
+                                                    <button type="submit" class="btn btn-primary btn-block" onclick="login_chk();">로그인하기</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="bottom text-center">
+                                            <a href="#"><b>회원가입</b></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <script>
+                        // 5.입력필드 검사함수
+                        function login_chk() {
+                            // 6.form 을 f 에 지정
+                            var f = document.loginForm;
+
+                            // 7.입력폼 검사
+                            if (f.m_id.value == "") {
+                                // 8.값이 없으면 경고창으로 메세지 출력 후 함수 종료
+                                alert("아이디를 입력해 주세요.");
+                                return false;
+                            }
+
+                            if (f.m_pass.value == "") {
+                                alert("비밀번호를 입력해 주세요.");
+                                return false;
+                            }
+
+                            // 9.검사가 성공이면 form 을 submit 한다
+                            f.submit();
+
+                        }
+                    </script>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 국 내 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="./TravelContent_page.html">서울, 인천</a></li>
+                                <li><a href="./TravelContent_page.html">경기도</a></li>
+                                <li><a href="./TravelContent_page.html">강원도</a></li>
+                                <li><a href="./TravelContent_page.html">경상도</a></li>
+                                <li><a href="./TravelContent_page.html">전라도</a></li>
+                                <li><a href="./TravelContent_page.html">충청도</a></li>
+                                <li><a href="./TravelContent_page.html">제주도</a></li>
+                                <li><a href="./TravelContent_page.html">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 해 외 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="./TravelContent_page.html">일본</a></li>
+                                <li><a href="./TravelContent_page.html">중국</a></li>
+                                <li><a href="./TravelContent_page.html">대만</a></li>
+                                <li><a href="./TravelContent_page.html">홍콩</a></li>
+                                <li><a href="./TravelContent_page.html">미국</a></li>
+                                <li><a href="./TravelContent_page.html">프랑스</a></li>
+                                <li><a href="./TravelContent_page.html">호주</a></li>
+                                <li><a href="./TravelContent_page.html">기타</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./TravelEditor_page.html"><b>여행후기작성하기</b></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <!--이미지 슬라이드-->
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <ul class="nav nav-pills nav-justified">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active">
+                        <a href="#">
+                            <b>대만</b> <small>예류지질공원</small>
+                        </a>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="1">
+                        <a href="#">
+                            <b>대만</b> <small>워런마터우</small>
+                        </a>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="2">
+                        <a href="#">
+                            <b>대구</b> <small>디아크</small>
+                        </a>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="3">
+                        <a href="#">
+                            <b>부산</b> <small>광안대교</small>
+                        </a>
+                    </li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="./image/IMG_4.jpg">
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <img src="./image/IMG_5.jpg">
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <img src="./image/IMG_6.jpg">
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <img src="./image/IMG_7.jpg">
+                    </div>
+                    <!-- End Item -->
+                </div>
+                <!-- End Carousel Inner -->
+            </div>
+            <!-- End Carousel -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container_1" style="margin: 25px;">
+            <div class="row">
+                <p>Copyright (C) 2016 Web Travel 컴퓨터공학과 5179064 예윤경 </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

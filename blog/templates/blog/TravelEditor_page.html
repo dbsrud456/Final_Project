@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
+    <!-- include summernote-ko-KR -->
+    <script src="lang/summernote-ko-KR.js"></script>
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+
+    <title></title>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        section {
+            padding-top: 50px;
+            min-height: 750px;
+        }
+        section .container{
+
+        }
+
+        footer {
+            height: 100px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 50px;
+            background-color: grey;
+            background-position: center;
+            float: left;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .container_1 {
+            margin-top: 50px;
+            color: #fff;
+        }
+    </style>
+
+    <script language="javascript">
+        //확인버튼
+        function Submit() {
+            if ($('#summernote').summernote('isEmpty')) {
+                alert('내용을 작성해 주세요.');
+            }
+            else {
+                var f = document.bWriteForm;
+                f.submit();
+            }
+        }
+
+        //취소버튼
+        function Cancle() {
+            if (confirm("정말 취소하시겠습니까?")) {
+                location.href = "./MAIN_page.html"
+            }
+            else return;
+        }
+        function radio_check() { 
+            if (document.form.radio01.checked) {
+                document.getElementById("Select01").style.display = '';
+                document.getElementById("Select02").style.display = 'none';
+            } else if(document.form.radio02.checked) {
+                document.getElementById("Select01").style.display = 'none';
+                document.getElementById("Select02").style.display = '';
+                document.forms.radio01.checked = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./Main_page.html" style="color:#2a309f; font-weight:bold; font-size:20px; ">Memories</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./Login_page.html" target="_top">Login</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 국 내 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="./TravelContent_page.html">서울, 인천</a></li>
+                                <li><a href="./TravelContent_page.html">경기도</a></li>
+                                <li><a href="./TravelContent_page.html">강원도</a></li>
+                                <li><a href="./TravelContent_page.html">경상도</a></li>
+                                <li><a href="./TravelContent_page.html">전라도</a></li>
+                                <li><a href="./TravelContent_page.html">충청도</a></li>
+                                <li><a href="./TravelContent_page.html">제주도</a></li>
+                                <li><a href="./TravelContent_page.html">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 해 외 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="./TravelContent_page.html">일본</a></li>
+                                <li><a href="./TravelContent_page.html">중국</a></li>
+                                <li><a href="./TravelContent_page.html">대만</a></li>
+                                <li><a href="./TravelContent_page.html">홍콩</a></li>
+                                <li><a href="./TravelContent_page.html">미국</a></li>
+                                <li><a href="./TravelContent_page.html">프랑스</a></li>
+                                <li><a href="./TravelContent_page.html">호주</a></li>
+                                <li><a href="./TravelContent_page.html">기타</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./TravelEditor_page.html"><b>여행후기작성하기</b></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h3><b>여행후기 작성하기</b></h3>
+            <hr />
+            <div>
+                <form name="form">
+                    <input name="area" id="radio01" type="radio" value="0" onclick="radio_check()" style="padding:0 10%" checked/><label for="radio01">국내여행</label>
+                    <input name="area" id="radio02" type="radio" value="1" onclick="radio_check()" style="padding:0 10%" /><label for="radio02">해외여행</label>
+                    <br />
+                    <select name="" id="Select01" style="height:30px; width:12%;">
+                        <option value="null">선택하기</option>
+                        <option value="seoul, incheon">서울, 인천</option>
+                        <option value="gyeonggi">경기도</option>
+                        <option value="gangwon">강원도</option>
+                        <option value="chungcheong">충청도</option>
+                        <option value="gyeongsang">경상도</option>
+                        <option value="jeolla">전라도</option>
+                        <option value="jeju">제주도</option>
+                        <option value="etc">기타</option>
+                    </select>
+                    <select name="" id="Select02" style="display: none; height: 30px; width: 12%; ">
+                        <option value="null">선택하기</option>
+                        <option value="japan">일본</option>
+                        <option value="china">중국</option>
+                        <option value="taiwan">대만</option>
+                        <option value="hongkong">홍콩</option>
+                        <option value="US">미국</option>
+                        <option value="france">프랑스</option>
+                        <option value="australia">호주</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </form>
+                <hr />
+                <br />
+            </div>
+
+            <article>
+                <div id="summernote"></div>
+                <script>
+                    $(document).ready(function () {
+                        $('#summernote').summernote(
+                            {
+                                onblur: function (e) {
+                                    $('#summercontent').html($('#summernote').code());
+                                },
+                                height: 500
+                            });
+                    });
+
+                </script>
+            </article>
+            <article>
+                <br />
+                <table align="center">
+                    <tr>
+                        <td>
+                            <input type="button" value="  등록  " style="color:black; font-weight:bold;" onclick="javascript:Submit()">
+                            <input type="button" value="  취소  " style="color:black; font-weight:bold;" onclick="javascript:Cancle()">
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container_1" style="margin: 25px;">
+            <div class="row">
+                <p>Copyright (C) 2016 Web Travel 컴퓨터공학과 5179064 예윤경 </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

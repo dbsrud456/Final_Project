@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <title></title>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        section {
+            padding-top: 50px;
+            min-height: 750px;
+        }
+
+        .post {
+            background-color: #FFF;
+            overflow: hidden;
+            box-shadow: 0 0 1px #CCC;
+        }
+
+        .post .content {
+            padding: 15px;
+        }
+
+        .post .author {
+            font-size: 15px;
+            color: #737373;
+            padding: 25px 30px 20px;
+        }
+
+        .post .post-img-content {
+            min-height: 220px;
+            position: relative;
+        }
+
+        .post .post-img-content img {
+            position:absolute;
+        }
+
+        .post .post-title {
+            display: table-cell;
+            vertical-align: bottom;
+            z-index: 2;
+            position: relative;
+        }
+
+        .post .post-title b {
+            background-color: rgba(51, 51, 51, 0.58);
+            display: inline-block;
+            margin-bottom: 5px;
+            color: #FFF;
+            padding: 10px 15px;
+            margin-top: 5px;
+        }
+
+        footer {
+            height: 100px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 50px;
+            background-color: grey;
+            background-position: center;
+            float: left;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .container_1 {
+            margin-top: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body><nav>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./Main_page.html" style="color:#2a309f; font-weight:bold; font-size:20px; ">Memories</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./Login_page.html" target="_top">Login</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 국 내 여 행 </b><b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-level">
+                            <li><a href="./TravelContent_page.html">서울, 인천</a></li>
+                            <li><a href="./TravelContent_page.html">경기도</a></li>
+                            <li><a href="./TravelContent_page.html">강원도</a></li>
+                            <li><a href="./TravelContent_page.html">경상도</a></li>
+                            <li><a href="./TravelContent_page.html">전라도</a></li>
+                            <li><a href="./TravelContent_page.html">충청도</a></li>
+                            <li><a href="./TravelContent_page.html">제주도</a></li>
+                            <li><a href="./TravelContent_page.html">기타</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 해 외 여 행 </b><b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-level">
+                            <li><a href="./TravelContent_page.html">일본</a></li>
+                            <li><a href="./TravelContent_page.html">중국</a></li>
+                            <li><a href="./TravelContent_page.html">대만</a></li>
+                            <li><a href="./TravelContent_page.html">홍콩</a></li>
+                            <li><a href="./TravelContent_page.html">미국</a></li>
+                            <li><a href="./TravelContent_page.html">프랑스</a></li>
+                            <li><a href="./TravelContent_page.html">호주</a></li>
+                            <li><a href="./TravelContent_page.html">기타</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./TravelEditor_page.html"><b>여행후기작성하기</b></a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</nav>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <div class="post">
+                    <div class="post-img-content">
+                        <img src="./image/IMG_1.jpg" class="img-responsive" />
+                        <span class="post-title">
+                            <b>제주도</b><br />
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            By <b>Bhaumik</b> |
+                            <time datetime="2014-01-20">January 20th, 2014</time>
+                        </div>
+                        <div>
+                            내용내용내용
+                        </div>
+                        <div align="center">
+                            <br>
+                            <a href="#" class="btn btn-warning btn-sm">more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <div class="post">
+                    <div class="post-img-content">
+                        <img src="./image/IMG_1.jpg" class="img-responsive" />
+                        <span class="post-title">
+                            <b>제주도</b><br />
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            By <b>Bhaumik</b> |
+                            <time datetime="2014-01-20">January 20th, 2014</time>
+                        </div>
+                        <div>
+                            내용내용내용
+                        </div>
+                        <div align ="center">
+                            <br>
+                            <a href="#" class="btn btn-warning btn-sm">more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <div class="post">
+                    <div class="post-img-content">
+                        <img src="./image/IMG_1.jpg" class="img-responsive" />
+                        <span class="post-title">
+                            <b>제주도</b><br />
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            By <b>Bhaumik</b> |
+                            <time datetime="2014-01-20">January 20th, 2014</time>
+                        </div>
+                        <div>
+                            내용내용내용
+                        </div>
+                        <div align ="center">
+                            <br>
+                            <a href="#" class="btn btn-warning btn-sm">more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container_1" style="margin: 25px;">
+        <div class="row">
+            <p>Copyright (C) 2016 Web Travel 컴퓨터공학과 5179064 예윤경 </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

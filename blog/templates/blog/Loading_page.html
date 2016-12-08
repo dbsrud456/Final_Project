@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+
+    <title></title>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        section {
+            padding-top: 50px;
+            min-height: 750px;
+        }
+
+        #loading {
+            height: 100%;
+            left: 0;
+            margin: auto;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .bokeh {
+            border: 0.01em solid rgba(150, 150, 150, 0.1);
+            border-radius: 50%;
+            font-size: 100px;
+            height: 1em;
+            list-style: outside none none;
+            margin: 0 auto;
+            position: relative;
+            top: 35%;
+            width: 1em;
+            z-index: 2147483647;
+        }
+                                        
+        .bokeh li {
+            border-radius: 50%;
+            height: 0.2em;
+            position: absolute;
+            width: 0.2em;
+        }
+
+        .bokeh li:nth-child(1) {
+            animation: 1.13s linear 0s normal none infinite running rota, 3.67s ease-in-out 0s alternate none infinite running opa;
+            background: #00c176 none repeat scroll 0 0;
+            left: 50%;
+            margin: 0 0 0 -0.1em;
+            top: 0;
+            transform-origin: 50% 250% 0;
+        }
+
+        .bokeh li:nth-child(2) {
+            animation: 1.86s linear 0s normal none infinite running rota, 4.29s ease-in-out 0s alternate none infinite running opa;
+            background: #ff003c none repeat scroll 0 0;
+            margin: -0.1em 0 0;
+            right: 0;
+            top: 50%;
+            transform-origin: -150% 50% 0;
+        }
+
+        .bokeh li:nth-child(3) {
+            animation: 1.45s linear 0s normal none infinite running rota, 5.12s ease-in-out 0s alternate none infinite running opa;
+            background: #fabe28 none repeat scroll 0 0;
+            bottom: 0;
+            left: 50%;
+            margin: 0 0 0 -0.1em;
+            transform-origin: 50% -150% 0;
+        }
+
+        .bokeh li:nth-child(4) {
+            animation: 1.72s linear 0s normal none infinite running rota, 5.25s ease-in-out 0s alternate none infinite running opa;
+            background: #88c100 none repeat scroll 0 0;
+            margin: -0.1em 0 0;
+            top: 50%;
+            transform-origin: 250% 50% 0;
+            }
+
+        @keyframes opa {
+            12% {
+                opacity: 0.8;
+            }
+
+            19.5% {
+                opacity: 0.88;
+            }
+
+            37.2% {
+                opacity: 0.64;
+            }
+
+            40.5% {
+                opacity: 0.52;
+            }
+
+            52.7% {
+                opacity: 0.69;
+            }
+
+            60.2% {
+                opacity: 0.6;
+            }
+
+            66.6% {
+                opacity: 0.52;
+            }
+
+            70% {
+                opacity: 0.63;
+            }
+
+            79.9% {
+                opacity: 0.6;
+            }
+
+            84.2% {
+                opacity: 0.75;
+            }
+
+            91% {
+                opacity: 0.87;
+            }
+        }
+
+        @keyframes rota {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        footer {
+            height: 100px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 50px;
+            background-color: grey;
+            background-position: center;
+            float: left;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .container_1 {
+            margin-top: 50px;
+            color: #fff;
+        }
+    </style>
+
+    <script language="javascript">
+
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./Main_page.html" style="color:#2a309f; font-weight:bold; font-size:20px; ">Memories</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./Login_page.html" target="_top">Login</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 국 내 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="./TravelContent_page.html">서울, 인천</a></li>
+                                <li><a href="./TravelContent_page.html">경기도</a></li>
+                                <li><a href="./TravelContent_page.html">강원도</a></li>
+                                <li><a href="./TravelContent_page.html">경상도</a></li>
+                                <li><a href="./TravelContent_page.html">전라도</a></li>
+                                <li><a href="./TravelContent_page.html">충청도</a></li>
+                                <li><a href="./TravelContent_page.html">제주도</a></li>
+                                <li><a href="./TravelContent_page.html">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b> 해 외 여 행 </b><b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-level">
+                                <li><a href="./TravelContent_page.html">일본</a></li>
+                                <li><a href="./TravelContent_page.html">중국</a></li>
+                                <li><a href="./TravelContent_page.html">대만</a></li>
+                                <li><a href="./TravelContent_page.html">홍콩</a></li>
+                                <li><a href="./TravelContent_page.html">미국</a></li>
+                                <li><a href="./TravelContent_page.html">프랑스</a></li>
+                                <li><a href="./TravelContent_page.html">호주</a></li>
+                                <li><a href="./TravelContent_page.html">기타</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./TravelEditor_page.html"><b>여행후기작성하기</b></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <article>
+            <div class="container">
+                <br /><br />
+                <h2 style="font-weight:bold; color:#fabe28; text-align:center;">아직 준비중입니다 T.T</h2>
+                <div class="row">
+                    <div id="loading">
+                        <ul class="bokeh">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <div class="container_1" style="margin: 25px;">
+            <div class="row">
+                <p>Copyright (C) 2016 Web Travel 컴퓨터공학과 5179064 예윤경 </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
